@@ -42,8 +42,6 @@ class GenerateRandomInfo:
         self.df = self.df.explode('project', ignore_index=True)   
 
     def save_final_df_to_csv(self):
-        # change the column order and save the final dataframe
-        self.df = self.df[['name', 'surname', 'name_surname_combined', 'country_code', 'level', 'project']]
         try:
             self.df.to_csv('report.csv', index=False)
         except:
